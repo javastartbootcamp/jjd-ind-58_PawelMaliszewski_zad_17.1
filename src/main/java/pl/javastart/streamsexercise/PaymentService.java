@@ -167,7 +167,6 @@ class PaymentService {
     }
 
     private boolean paymentsGraterThan(Payment payment, int value) {
-        BigDecimal bigDecimal = new BigDecimal(value);
         int result = payment.getPaymentItems().stream()
                 .map(PaymentItem::getFinalPrice)
                 .reduce(BigDecimal.valueOf(0), BigDecimal::add)
